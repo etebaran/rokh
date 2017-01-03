@@ -201,3 +201,7 @@
 .hideVolumeButtons .volumeButton {
     visibility: hidden;
 }
+
+.castButton{
+display:none;
+}
