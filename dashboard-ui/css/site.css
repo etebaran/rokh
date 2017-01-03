@@ -265,7 +265,8 @@ div[data-role='page'] {
 
 .page > .ui-content, .pageWithAbsoluteTabs .pageTabContent, .absolutePageTabContent .itemsContainer {
     /* Need this so that the audio player doesn't cover content, but also for unveil lazy loading. */
-    padding-bottom: 160px;
+    padding-bottom: 0px;
+    direction:rtl;
 }
 
 @media all and (min-width: 800px) {
