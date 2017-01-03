@@ -1,0 +1,39 @@
+#!/usr/bin/php
+<?php
+$internet=trim(`internet`);
+if (!$internet)
+{
+
+	echo "Waiting 5 seconds before checking network...",PHP_EOL;
+	sleep(5);
+	$internet=trim(`internet`);
+}
+$config=file_get_contents("/etc/dnsmasq.conf");
+
+#$lines=array_filter(explode("\n",$config));
+
+preg_match("/^(#{0,1}address.*)/m",$config,$match);
+$res=$match[0];
+if ($res[0]=='#' and !$internet)
+{
+	$config=preg_replacE("/^#address=(.*)/m","address=$1",$config);
+	$change=true;
+}
+elseif ($res[0]!="#" and $internet)
+{
+	$config=preg_replacE("/^address=(.*)/m","#address=$1",$config);
+	$change=true;
+}
+else $change=false;
+if ($change)
+{
+	if ($internet)
+		echo "Internet connection available, updating DNS...",PHP_EOL;
+	else
+		echo "Internet connection unavailable, updating DNS...",PHP_EOL;
+	file_put_contents("/etc/dnsmasq.conf",$config);
+	shell_exec("service dnsmasq restart");
+}
+
+
+
