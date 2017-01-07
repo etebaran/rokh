@@ -16,40 +16,49 @@
             </button>
         </div>
     </div>
+<!--Mosilix-->
+<center>
+<a href="movies.html"><img alt='فیم' src="http://rokh.tv/images/button_01.png"></a>
+<a href="photos.html?topParentId=835fad9ca04f3889a27d89af6292c5c4"><img alt='تصویر' src="http://rokh.tv/images/button_02.png"></a>
+<a href="music.html"><img alt='صوت' src="http://rokh.tv/images/button_03.png"></a>
+<a href="http://rokh.tv/game"><img alt='سرگرمی' src="http://rokh.tv/images/button_04.png"></a>
+<a href="http://rokh.tv/documents"><img alt='خواندنی' src="http://rokh.tv/images/button_05.png"></a>
+<a href="http://rokh.tv/download"><img alt='دانلود' src="http://rokh.tv/images/button_06.png"></a>
+</center>
 
-    <div class="is-active pageTabContent ehsContent fullWidth" id="homeTab" data-index="0">
+    <div class="is-active pageTabContent ehsContent fullWidth hide" id="homeTab" data-index="0">
         <div class="ui-bar-b readOnlyContent welcomeMessage hide" style="padding: 2em; border-radius: 10px; margin: 2em auto; font-weight: normal;">
-            <h1 style="margin-top: 0;" class="tourHeader"></h1>
+            <h1 style="margin-top: 0;" class="tourHeader hide"></h1>
             <p>
                 <button is="emby-button" type="button" class="raised submit block btnTakeTour"><span class="tourButtonText"></span></button>
             </p>
         </div>
 
-        <div class="sections"></div>
+        <div class="sections hide"></div>
     </div>
-    <div class="pageTabContent ehsContent fullWidth" id="nextUpTab" data-index="1">
-        <div class="homePageSection">
+    <div class="pageTabContent ehsContent fullWidth hide" id="nextUpTab" data-index="1">
+        <div class="homePageSection hide">
             <div>
-                <h1 class="listHeader nextUpHeader" style="display: inline-block; vertical-align: middle;">${HeaderNextUp}</h1>
-                <button is="emby-button" type="button" class="raised submit mini categorySyncButton button-accent" data-category="NextUp">
+                <h1 class="listHeader nextUpHeader hide" style="display: inline-block; vertical-align: middle;">${HeaderNextUp}</h1>
+                <button is="emby-button" type="button" class="hide raised submit mini categorySyncButton button-accent" data-category="NextUp">
                     <span>${ButtonSync}</span>
                 </button>
             </div>
-            <div is="emby-itemscontainer" id="nextUpItems" class="itemsContainer vertical-wrap">
+            <div is="emby-itemscontainer" id="nextUpItems" class="hide itemsContainer vertical-wrap">
             </div>
         </div>
         <p class="noNextUpItems hide">${NoNextUpItemsMessage}</p>
     </div>
-    <div class="pageTabContent ehsContent fullWidth" id="favoritesTab" data-index="2">
-        <div class="favoriteSections"></div>
+    <div class="pageTabContent ehsContent fullWidth hide" id="favoritesTab" data-index="2">
+        <div class="favoriteSections hide"></div>
     </div>
-    <div class="pageTabContent ehsContent fullWidth" id="upcomingTab" data-index="3">
-        <div id="upcomingItems">
+    <div class="pageTabContent ehsContent fullWidth hide" id="upcomingTab" data-index="3">
+        <div id="upcomingItems" class="hide">
         </div>
         <div class="noItemsMessage hide">
-            <p>${MessageNothingHere}</p>
-            <p>
-                <a href="metadata.html">${MessagePleaseEnsureInternetMetadata}</a>
+            <p class="hide">${MessageNothingHere}</p>
+            <p class="hide">
+                <a class="hide" href="metadata.html">${MessagePleaseEnsureInternetMetadata}</a>
             </p>
         </div>
 
